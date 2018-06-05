@@ -17,17 +17,23 @@ class Cart
 	}
 	//Thêm sản phẩm vào giỏ hàng
 	public function add($item, $id){
-		$giohang = ['qty'=>0, 'price' => $item->unit_price, 'item' => $item];
-		if($this->items){
-			if(array_key_exists($id, $this->items)){
-				$giohang = $this->items[$id];
-			}
-		}
-		$giohang['qty']++;
-		$giohang['price'] = $item->unit_price * $giohang['qty'];
-		$this->items[$id] = $giohang;
-		$this->totalQty++;
-		$this->totalPrice += $item->unit_price;
+		$price = 0;
+       if($item->promotion_price!=0){
+              $price = $item->promotion_price;
+       }else{
+              $price = $item->unit_price;
+       }
+       $giohang = ['qty'=>0, 'price' => $price, 'item' => $item];
+       if($this->items){
+              if(array_key_exists($id, $this->items)){
+                     $giohang = $this->items[$id];
+              }
+       }
+       $giohang['qty']++;
+       $giohang['price'] = $price * $giohang['qty'];
+       $this->items[$id] = $giohang;
+       $this->totalQty++;
+       $this->totalPrice += $price;
 	}
 	//xóa 1 sản phẩm
 	public function reduceByOne($id){
