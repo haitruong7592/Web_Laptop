@@ -52,7 +52,7 @@
 											</div>
 										<div class="single-item-body">
 											<p class="single-item-title">{{$new -> name}}</p>
-											<p class="single-item-price" style="font-size:18px">
+											<p class="single-item-price" style="font-size:15px">
 											@if($new -> promotion_price == 0)
 												<span class="flash-sale">{{number_format($new -> unit_price)}} đồng</span>
 											@else
@@ -93,7 +93,7 @@
 										</div>
 										<div class="single-item-body">
 											<p class="single-item-title">{{$spkm->name}}</p>
-											<p class="single-item-price" style="font-size:18px"	>
+											<p class="single-item-price" style="font-size:15px"	>
 												<span class="flash-del">{{number_format($spkm->unit_price)}} đồng</span>
 												<span class="flash-sale">{{number_format($spkm->promotion_price)}} đồng</span>
 											</p>

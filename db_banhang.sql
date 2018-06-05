@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.0.1
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 25, 2017 at 08:34 AM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.6.24
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th6 05, 2018 lúc 08:51 PM
+-- Phiên bản máy phục vụ: 10.1.32-MariaDB
+-- Phiên bản PHP: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_banhang`
+-- Cơ sở dữ liệu: `db_banhang`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bills`
+-- Cấu trúc bảng cho bảng `bills`
 --
 
 CREATE TABLE `bills` (
@@ -38,20 +40,19 @@ CREATE TABLE `bills` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `bills`
+-- Đang đổ dữ liệu cho bảng `bills`
 --
 
 INSERT INTO `bills` (`id`, `id_customer`, `date_order`, `total`, `payment`, `note`, `created_at`, `updated_at`) VALUES
-(14, 14, '2017-03-23', 160000, 'COD', 'k', '2017-03-23 04:46:05', '2017-03-23 04:46:05'),
-(13, 13, '2017-03-21', 400000, 'ATM', 'Vui lòng giao hàng trước 5h', '2017-03-21 07:29:31', '2017-03-21 07:29:31'),
-(12, 12, '2017-03-21', 520000, 'COD', 'Vui lòng chuyển đúng hạn', '2017-03-21 07:20:07', '2017-03-21 07:20:07'),
-(11, 11, '2017-03-21', 420000, 'COD', 'không chú', '2017-03-21 07:16:09', '2017-03-21 07:16:09'),
-(15, 15, '2017-03-24', 220000, 'COD', 'e', '2017-03-24 07:14:32', '2017-03-24 07:14:32');
+(14, 14, '2018-05-04', 160000, 'COD', 'k', '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(13, 13, '2018-05-04', 400000, 'ATM', 'Vui lòng giao hàng trước 5h', '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(12, 12, '2018-05-04', 520000, 'COD', 'Vui lòng chuyển đúng hạn', '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(16, 19, '2018-06-05', 510000, 'ATM', 'Anh hai', '2018-06-05 12:02:16', '2018-06-05 12:02:16');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bill_detail`
+-- Cấu trúc bảng cho bảng `bill_detail`
 --
 
 CREATE TABLE `bill_detail` (
@@ -65,23 +66,16 @@ CREATE TABLE `bill_detail` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `bill_detail`
+-- Đang đổ dữ liệu cho bảng `bill_detail`
 --
 
 INSERT INTO `bill_detail` (`id`, `id_bill`, `id_product`, `quantity`, `unit_price`, `created_at`, `updated_at`) VALUES
-(18, 15, 62, 5, 220000, '2017-03-24 07:14:32', '2017-03-24 07:14:32'),
-(17, 14, 2, 1, 160000, '2017-03-23 04:46:05', '2017-03-23 04:46:05'),
-(16, 13, 60, 1, 200000, '2017-03-21 07:29:31', '2017-03-21 07:29:31'),
-(15, 13, 59, 1, 200000, '2017-03-21 07:29:31', '2017-03-21 07:29:31'),
-(14, 12, 60, 2, 200000, '2017-03-21 07:20:07', '2017-03-21 07:20:07'),
-(13, 12, 61, 1, 120000, '2017-03-21 07:20:07', '2017-03-21 07:20:07'),
-(12, 11, 61, 1, 120000, '2017-03-21 07:16:09', '2017-03-21 07:16:09'),
-(11, 11, 57, 2, 150000, '2017-03-21 07:16:09', '2017-03-21 07:16:09');
+(20, 16, 2, 2, 180000, '2018-06-05 12:02:16', '2018-06-05 12:02:16');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customer`
+-- Cấu trúc bảng cho bảng `customer`
 --
 
 CREATE TABLE `customer` (
@@ -97,20 +91,17 @@ CREATE TABLE `customer` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `customer`
+-- Đang đổ dữ liệu cho bảng `customer`
 --
 
 INSERT INTO `customer` (`id`, `name`, `gender`, `email`, `address`, `phone_number`, `note`, `created_at`, `updated_at`) VALUES
-(15, 'ê', 'Nữ', 'huongnguyen@gmail.com', 'e', 'e', 'e', '2017-03-24 07:14:32', '2017-03-24 07:14:32'),
-(14, 'hhh', 'nam', 'huongnguyen@gmail.com', 'Lê thị riêng', '99999999999999999', 'k', '2017-03-23 04:46:05', '2017-03-23 04:46:05'),
-(13, 'Hương Hương', 'Nữ', 'huongnguyenak96@gmail.com', 'Lê Thị Riêng, Quận 1', '23456789', 'Vui lòng giao hàng trước 5h', '2017-03-21 07:29:31', '2017-03-21 07:29:31'),
-(12, 'Khoa phạm', 'Nam', 'khoapham@gmail.com', 'Lê thị riêng', '1234567890', 'Vui lòng chuyển đúng hạn', '2017-03-21 07:20:07', '2017-03-21 07:20:07'),
-(11, 'Hương Hương', 'Nữ', 'huongnguyenak96@gmail.com', 'Lê Thị Riêng, Quận 1', '234567890-', 'không chú', '2017-03-21 07:16:09', '2017-03-21 07:16:09');
+(18, 'Hải Trường Phan', 'nam', 'dnm@gmail.com', 'KTX KHU B DHQG TPHCM, Tô Vĩnh Diện, Đông Hòa, Dĩ An, Binh Duong', '01667906866', 'Anh hai', '2018-06-05 11:56:34', '2018-06-05 11:56:34'),
+(19, 'Hải Trường Phan', 'nam', 'dnm@gmail.com', 'KTX KHU B DHQG TPHCM, Tô Vĩnh Diện, Đông Hòa, Dĩ An, Binh Duong', '01667906866', 'Anh hai', '2018-06-05 12:02:16', '2018-06-05 12:02:16');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `news`
+-- Cấu trúc bảng cho bảng `news`
 --
 
 CREATE TABLE `news` (
@@ -122,21 +113,10 @@ CREATE TABLE `news` (
   `update_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `news`
---
-
-INSERT INTO `news` (`id`, `title`, `content`, `image`, `create_at`, `update_at`) VALUES
-(1, 'Mùa trung thu năm nay, Hỷ Lâm Môn muốn gửi đến quý khách hàng sản phẩm mới xuất hiện lần đầu tiên tại Việt nam "Bánh trung thu Bơ Sữa HongKong".', 'Những ý tưởng dưới đây sẽ giúp bạn sắp xếp tủ quần áo trong phòng ngủ chật hẹp của mình một cách dễ dàng và hiệu quả nhất. ', 'sample1.jpg', '2017-03-11 06:20:23', '0000-00-00 00:00:00'),
-(2, 'Tư vấn cải tạo phòng ngủ nhỏ sao cho thoải mái và thoáng mát', 'Chúng tôi sẽ tư vấn cải tạo và bố trí nội thất để giúp phòng ngủ của chàng trai độc thân thật thoải mái, thoáng mát và sáng sủa nhất. ', 'sample2.jpg', '2016-10-20 02:07:14', '0000-00-00 00:00:00'),
-(3, 'Đồ gỗ nội thất và nhu cầu, xu hướng sử dụng của người dùng', 'Đồ gỗ nội thất ngày càng được sử dụng phổ biến nhờ vào hiệu quả mà nó mang lại cho không gian kiến trúc. Xu thế của các gia đình hiện nay là muốn đem thiên nhiên vào nhà ', 'sample3.jpg', '2016-10-20 02:07:14', '0000-00-00 00:00:00'),
-(4, 'Hướng dẫn sử dụng bảo quản đồ gỗ, nội thất.', 'Ngày nay, xu hướng chọn vật dụng làm bằng gỗ để trang trí, sử dụng trong văn phòng, gia đình được nhiều người ưa chuộng và quan tâm. Trên thị trường có nhiều sản phẩm mẫu ', 'sample4.jpg', '2016-10-20 02:07:14', '0000-00-00 00:00:00'),
-(5, 'Phong cách mới trong sử dụng đồ gỗ nội thất gia đình', 'Đồ gỗ nội thất gia đình ngày càng được sử dụng phổ biến nhờ vào hiệu quả mà nó mang lại cho không gian kiến trúc. Phong cách sử dụng đồ gỗ hiện nay của các gia đình hầu h ', 'sample5.jpg', '2016-10-20 02:07:14', '0000-00-00 00:00:00');
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Cấu trúc bảng cho bảng `products`
 --
 
 CREATE TABLE `products` (
@@ -154,76 +134,47 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `products`
+-- Đang đổ dữ liệu cho bảng `products`
 --
 
 INSERT INTO `products` (`id`, `name`, `id_type`, `description`, `unit_price`, `promotion_price`, `image`, `unit`, `new`, `created_at`, `updated_at`) VALUES
-(1, 'Bánh Crepe Sầu riêng', 5, 'Bánh crepe sầu riêng nhà làm', 150000, 120000, '1430967449-pancake-sau-rieng-6.jpg', 'hộp', 1, '2016-10-26 03:00:16', '2016-10-24 22:11:00'),
-(2, 'Bánh Crepe Chocolate', 6, '', 180000, 160000, 'crepe-chocolate.jpg', 'hộp', 1, '2016-10-26 03:00:16', '2016-10-24 22:11:00'),
-(3, 'Bánh Crepe Sầu riêng - Chuối', 5, '', 150000, 120000, 'crepe-chuoi.jpg', 'hộp', 0, '2016-10-26 03:00:16', '2016-10-24 22:11:00'),
-(4, 'Bánh Crepe Đào', 5, '', 160000, 0, 'crepe-dao.jpg', 'hộp', 0, '2016-10-26 03:00:16', '2016-10-24 22:11:00'),
-(5, 'Bánh Crepe Dâu', 5, '', 160000, 0, 'crepedau.jpg', 'hộp', 0, '2016-10-26 03:00:16', '2016-10-24 22:11:00'),
-(6, 'Bánh Crepe Pháp', 5, '', 200000, 180000, 'crepe-phap.jpg', 'hộp', 0, '2016-10-26 03:00:16', '2016-10-24 22:11:00'),
-(7, 'Bánh Crepe Táo', 5, '', 160000, 0, 'crepe-tao.jpg', 'hộp', 1, '2016-10-26 03:00:16', '2016-10-24 22:11:00'),
-(8, 'Bánh Crepe Trà xanh', 5, '', 160000, 150000, 'crepe-traxanh.jpg', 'hộp', 0, '2016-10-26 03:00:16', '2016-10-24 22:11:00'),
-(9, 'Bánh Crepe Sầu riêng và Dứa', 5, '', 160000, 150000, 'saurieng-dua.jpg', 'hộp', 0, '2016-10-26 03:00:16', '2016-10-24 22:11:00'),
-(11, 'Bánh Gato Trái cây Việt Quất', 3, '', 250000, 0, '544bc48782741.png', 'cái', 0, '2016-10-12 02:00:00', '2016-10-27 02:24:00'),
-(12, 'Bánh sinh nhật rau câu trái cây', 3, '', 200000, 180000, '210215-banh-sinh-nhat-rau-cau-body- (6).jpg', 'cái', 0, '2016-10-12 02:00:00', '2016-10-27 02:24:00'),
-(13, 'Bánh kem Chocolate Dâu', 3, '', 300000, 280000, 'banh kem sinh nhat.jpg', 'cái', 1, '2016-10-12 02:00:00', '2016-10-27 02:24:00'),
-(14, 'Bánh kem Dâu III', 3, '', 300000, 280000, 'Banh-kem (6).jpg', 'cái', 0, '2016-10-12 02:00:00', '2016-10-27 02:24:00'),
-(15, 'Bánh kem Dâu I', 3, '', 350000, 320000, 'banhkem-dau.jpg', 'cái', 1, '2016-10-12 02:00:00', '2016-10-27 02:24:00'),
-(16, 'Bánh trái cây II', 3, '', 150000, 120000, 'banhtraicay.jpg', 'hộp', 0, '2016-10-12 02:00:00', '2016-10-27 02:24:00'),
-(17, 'Apple Cake', 3, '', 250000, 240000, 'Fruit-Cake_7979.jpg', 'cai', 0, '2016-10-12 02:00:00', '2016-10-27 02:24:00'),
-(18, 'Bánh ngọt nhân cream táo', 2, '', 180000, 0, '20131108144733.jpg', 'hộp', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(19, 'Bánh Chocolate Trái cây', 2, '', 150000, 0, 'Fruit-Cake_7976.jpg', 'hộp', 1, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(20, 'Bánh Chocolate Trái cây II', 2, '', 150000, 0, 'Fruit-Cake_7981.jpg', 'hộp', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(21, 'Peach Cake', 2, '', 160000, 150000, 'Peach-Cake_3294.jpg', 'cái', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(22, 'Bánh bông lan trứng muối I', 1, '', 160000, 150000, 'banhbonglantrung.jpg', 'hộp', 1, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(23, 'Bánh bông lan trứng muối II', 1, '', 180000, 0, 'banhbonglantrungmuoi.jpg', 'hộp', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(24, 'Bánh French', 1, '', 180000, 0, 'banh-man-thu-vi-nhat-1.jpg', 'hộp', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(25, 'Bánh mì Australia', 1, '', 80000, 70000, 'dung-khoai-tay-lam-banh-gato-man-cuc-ngon.jpg', 'hộp', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(26, 'Bánh mặn thập cẩm', 1, '', 50000, 0, 'Fruit-Cake.png', 'hộp', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(27, 'Bánh Muffins trứng', 1, '', 100000, 80000, 'maxresdefault.jpg', 'hộp', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(28, 'Bánh Scone Peach Cake', 1, '', 120000, 0, 'Peach-Cake_3300.jpg', 'hộp', 1, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(29, 'Bánh mì Loaf I', 1, '', 100000, 0, 'sli12.jpg', 'hộp', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(30, 'Bánh kem Chocolate Dâu I', 4, '', 380000, 350000, 'sli12.jpg', 'cái', 1, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(31, 'Bánh kem Trái cây I', 4, '', 380000, 350000, 'Fruit-Cake.jpg', 'cái', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(32, 'Bánh kem Trái cây II', 4, '', 380000, 350000, 'Fruit-Cake_7971.jpg', 'cái', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(33, 'Bánh kem Doraemon', 4, '', 280000, 250000, 'p1392962167_banh74.jpg', 'cái', 1, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(34, 'Bánh kem Caramen Pudding', 4, '', 280000, 0, 'Caramen-pudding636099031482099583.jpg', 'cái', 1, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(35, 'Bánh kem Chocolate Fruit', 4, '', 320000, 300000, 'chocolate-fruit636098975917921990.jpg', 'cái', 1, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(36, 'Bánh kem Coffee Chocolate GH6', 4, '', 320000, 300000, 'COFFE-CHOCOLATE636098977566220885.jpg', 'cái', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(37, 'Bánh kem Mango Mouse', 4, '', 320000, 300000, 'mango-mousse-cake.jpg', 'cái', 1, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(38, 'Bánh kem Matcha Mouse', 4, '', 350000, 330000, 'MATCHA-MOUSSE.jpg', 'cái', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(39, 'Bánh kem Flower Fruit', 4, '', 350000, 330000, 'flower-fruits636102461981788938.jpg', 'cái', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(40, 'Bánh kem Strawberry Delight', 4, '', 350000, 330000, 'strawberry-delight636102445035635173.jpg', 'cái', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(41, 'Bánh kem Raspberry Delight', 4, '', 350000, 330000, 'raspberry.jpg', 'cái', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(42, 'Beefy Pizza', 6, 'Thịt bò xay, ngô, sốt BBQ, phô mai mozzarella', 150000, 130000, '40819_food_pizza.jpg', 'cái', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(43, 'Hawaii Pizza', 6, 'Sốt cà chua, ham , dứa, pho mai mozzarella', 120000, 0, 'hawaiian paradise_large-900x900.jpg', 'cái', 1, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(44, 'Smoke Chicken Pizza', 6, 'Gà hun khói,nấm, sốt cà chua, pho mai mozzarella.', 120000, 0, 'chicken black pepper_large-900x900.jpg', 'cái', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(45, 'Sausage Pizza', 6, 'Xúc xích klobasa, Nấm, Ngô, sốtcà chua, pho mai Mozzarella.', 120000, 0, 'pizza-miami.jpg', 'cái', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(46, 'Ocean Pizza', 6, 'Tôm , mực, xào cay,ớt xanh, hành tây, cà chua, phomai mozzarella.', 120000, 0, 'seafood curry_large-900x900.jpg', 'cái', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(47, 'All Meaty Pizza', 6, 'Ham, bacon, chorizo, pho mai mozzarella.', 140000, 0, 'all1).jpg', 'cái', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(48, 'Tuna Pizza', 6, 'Cá Ngừ, sốt Mayonnaise,sốt càchua, hành tây, pho mai Mozzarella', 140000, 0, '54eaf93713081_-_07-germany-tuna.jpg', 'cái', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(49, 'Bánh su kem nhân dừa', 7, '', 120000, 100000, 'maxresdefault.jpg', 'cái', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(50, 'Bánh su kem sữa tươi', 7, '', 120000, 100000, 'sukem.jpg', 'cái', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(51, 'Bánh su kem sữa tươi chiên giòn', 7, '', 150000, 0, '1434429117-banh-su-kem-chien-20.jpg', 'hộp', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(52, 'Bánh su kem dâu sữa tươi', 7, '', 150000, 0, 'sukemdau.jpg', 'hộp', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(53, 'Bánh su kem bơ sữa tươi', 7, '', 150000, 0, 'He-Thong-Banh-Su-Singapore-Chewy-Junior.jpg', 'hộp', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(54, 'Bánh su kem nhân trái cây sữa tươi', 7, '', 150000, 0, 'foody-banh-su-que-635930347896369908.jpg', 'hộp', 1, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(55, 'Bánh su kem cà phê', 7, '', 150000, 0, 'banh-su-kem-ca-phe-1.jpg', 'hộp', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(56, 'Bánh su kem phô mai', 7, '', 150000, 0, '50020041-combo-20-banh-su-que-pho-mai-9.jpg', 'hộp', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(57, 'Bánh su kem sữa tươi chocolate', 7, '', 150000, 0, 'combo-20-banh-su-que-kem-sua-tuoi-phu-socola.jpg', 'hộp', 1, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(58, 'Bánh Macaron Pháp', 2, 'Thưởng thức macaron, người ta có thể tìm thấy từ những hương vị truyền thống như mâm xôi, chocolate, cho đến những hương vị mới như nấm và trà xanh. Macaron với vị giòn tan của vỏ bánh, béo ngậy ngọt ngào của phần nhân, với vẻ ngoài đáng yêu và nhiều màu sắc đẹp mắt, đây là món bạn không nên bỏ qua khi khám phá nền ẩm thực Pháp.', 200000, 180000, 'Macaron9.jpg', '', 0, '2016-10-26 17:00:00', '2016-10-11 17:00:00'),
-(59, 'Bánh Tiramisu - Italia', 2, 'Chỉ cần cắn một miếng, bạn sẽ cảm nhận được tất cả các hương vị đó hòa quyện cùng một chính vì thế người ta còn ví món bánh này là Thiên đường trong miệng của bạn', 200000, 0, '234.jpg', '', 0, '2016-10-26 17:00:00', '2016-10-11 17:00:00'),
-(60, 'Bánh Táo - Mỹ', 2, 'Bánh táo Mỹ với phần vỏ bánh mỏng, giòn mềm, ẩn chứa phần nhân táo thơm ngọt, điểm chút vị chua dịu của trái cây quả sẽ là một lựa chọn hoàn hảo cho những tín đồ bánh ngọt trên toàn thế giới.', 200000, 0, '1234.jpg', '', 0, '2016-10-26 17:00:00', '2016-10-11 17:00:00'),
-(61, 'Bánh Cupcake - Anh Quốc', 6, 'Những chiếc cupcake có cấu tạo gồm phần vỏ bánh xốp mịn và phần kem trang trí bên trên rất bắt mắt với nhiều hình dạng và màu sắc khác nhau. Cupcake còn được cho là chiếc bánh mang lại niềm vui và tiếng cười như chính hình dáng đáng yêu của chúng.', 150000, 120000, 'cupcake.jpg', 'cái', 1, NULL, NULL),
-(62, 'Bánh Sachertorte', 6, 'Sachertorte là một loại bánh xốp được tạo ra bởi loại&nbsp;chocholate&nbsp;tuyệt hảo nhất của nước Áo. Sachertorte có vị ngọt nhẹ, gồm nhiều lớp bánh được làm từ ruột bánh mì và bánh sữa chocholate, xen lẫn giữa các lớp bánh là mứt mơ. Món bánh chocholate này nổi tiếng tới mức thành phố Vienna của Áo đã ấn định&nbsp;tổ chức một ngày Sachertorte quốc gia, vào 5/12 hằng năm', 250000, 220000, '111.jpg', 'cái', 0, NULL, NULL);
+(1, ' Toshiba Satellite L40-AS130XG ', 6, 'Bộ vi xử lý: Core i5-4200U(1.6Ghz-3Mb) \r\nBộ nhớ trong: 4Gb \r\nDung lượng ổ cứng: 500Gb \r\nMàn hình: 14.0 HD 200 CSV LD \r\nCạc đồ họa:Nvidia GT755M 2Gb ', 15690000, 14690000, 'toshiba-2.jpg', 'cái', 1, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(2, 'Toshiba Satellite L40-AS130XW', 6, 'Bộ vi xử lý: Core i5-4200U(1.6Ghz-3Mb) \r\nBộ nhớ trong: 4Gb \r\nDung lượng ổ cứng: 500Gb \r\nMàn hình: 14.0 HD 200 CSV LD \r\nCạc đồ họa:Nvidia GT755M 2Gb ', 15690000, 14690000, 'toshiba-1.jpg', 'cái', 1, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(3, 'Acer ES1 533 P6L2', 5, 'Acer ES1 thuộc trong phân khúc giá rẻ thích hợp cho học sinh, sinh viên nên có thiết kế khá cơ bản, vỏ nhựa nhẹ nhàng và các họa tiết in chìm chống bám vân tay hiệu quản. Máy có trọng lượng 2.4 kg, tương đối gọn nhẹ cho nhiều điều kiện sử dụng và di chuyển dễ dàng.', 8490000, 7490000, 'acer-4.jpg', 'cái', 0, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(4, 'Acer Swift SF314 54 51QL', 5, 'Acer Swift SF314 54 51QL sở hữu hiệu năng phần cứng khá mạnh mẽ nhờ CPU Core i5 thế hệ thứ 8 Kabylake Refresh với rất nhiều cải tiến để tăng sức mạnh cũng như tiết kiệm pin hơn. Xung nhịp thông thường 1.6 GHz, có thể tăng lên 3.4 GHz ở các công việc nặng nề hơn. Máy sở hữu RAM 4G công nghệ DDR4 chạy ở xung nhịp cao 2400 MHz kết hợp cùng 1 TB ổ cứng HDD cho mọi tác vụ được trơn tru, lưu giữ được nhiều dữ liệu, có thể nâng cấp ổ cứng SSD M.2 tốc độ c', 16990000, 0, 'acer-3.jpg', 'cái', 1, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(5, 'Acer Nitro 5 AN515 51 739L i7', 5, 'Acer Nitro 5 AN515 là dòng laptop sinh ra để phục vụ nhu cầu chơi game của các game thủ. Với cấu hình vượt trội CPU Intel Core i7 kết hợp cùng card đồ họa GTX 1050 sẽ cho bạn một trải nghiệm chơi game hoàn toàn tuyệt vời.\r\n\r\nAcer Nitro 5 AN515 có thiết kế hầm hố, đầy mạnh mẽ với thiết kế bên trong tản nhiệt rất tốt, tối ưu cho nhu cầu sử dụng liên tục và bền bỉ', 23490000, 0, 'acer-2.gif', 'cái', 0, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(6, 'Acer Swift SF315 51 530V i5', 5, 'Acer Swift SF315 51 530V là một trong những laptop đầu tiên được trang bị công nghệ CPU Intel mới thế hệ thứ 8 mới nhất tại thời điểm ra mắt. Thuộc dòng sản phẩm tầm trung cao, SF315 có thiết kế đẹp mắt, sang trọng với vỏ kim loại, đồng thời cũng chắc chắn và bền bỉ.', 16990000, 15990000, 'acer-1.jpg', 'cái', 0, '2018-05-04 06:00:27', '2018-06-03 04:00:23'),
+(7, 'HP Pavilion x360 11-ad026TU', 4, 'Cân nặng:	1.5 kg\r\nCPU:	Core i3-7100U Processor 2.4GHz (3M Cache)\r\nMàu sắc:	Silver\r\nTình Trạng Máy :	Mới 100%\r\nXuất xứ:	Chính hãng\r\nRAM:	4GB DDr4 (2133MHz)\r\nỔ cứng:	HDD 500GB (5400rpm)\r\nMàn hình:	11.6 HD (1366x768) IPS WLED Backlit MultiTouch Enabled Edge To Edge Glass\r\nVGA/GPU:	Intel HD Graphics 620M', 12490000, 0, 'hp-4.jpg', 'cái', 1, '2018-05-04 06:00:27', '2018-06-03 04:00:23'),
+(8, 'DELL VOSTRO 15 3568', 1, 'CPU: Intel Core i5\r\nRAM/HDD: 4GB/1TB\r\nMàn hình: HD 15.6 inch\r\nHĐH: Linux\r\nBảo hành: 12 tháng', 13490000, 12990000, 'dell-vostro-5568x.jpg', 'cái', 0, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(9, 'Laptop HP PAVILION X360 13-U106TU ', 4, 'Cân nặng:	1.6KG\r\nCPU:	Core i3, 7100U, 2.4GHz, 3M\r\nMàu sắc:	Silver\r\nTình Trạng Máy :	Mới 100%\r\nXuất xứ:	Chính hãng\r\nRAM:	4GB DDR4\r\nỔ cứng:	HDD 500GB (5400rpm)\r\nMàn hình:	13.3 inch Touch HD (1366 x 768 pixels) IPS WLED-backlit\r\nVGA/GPU:	Intel® UHD Graphics 620', 12090000, 11090000, 'hp-3.jpg', 'cái', 0, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(10, 'DELL VOSTRO 14 - 5471', 1, 'Vi xử lý Intel core i5 thế hệ 8\r\nRAM DDR4 4GB\r\nỔ cứng 1 TB\r\nMàn hình 14.0\'\' Full HD\r\nHệ điều hành Windows 10 Home\r\nThiết kế nhẹ, cứng cáp', 17490000, 0, 'dell-xxx.jpg', 'cái', 1, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(11, 'Laptop HP Pavilion 14-bf016TU', 4, 'Cân nặng:	1.7KG\r\nCPU:	Core i3, 7100U, 2.4GHz, 3M\r\nMàu sắc:	Silver\r\nTình Trạng Máy :	Mới 100%\r\nXuất xứ:	Chính hãng\r\nRAM:	4GB DDR4\r\nỔ cứng:	HDD 1000GB (5400rpm)\r\nMàn hình:	14 inch Full HD (1920x1080) Resolution, High Brightness Acer ComfyView LED Backlit TFT LCD\r\nVGA/GPU:	Intel® UHD Graphics 620', 11390000, 0, 'hp-2.jpg', 'cái', 0, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(12, 'Laptop Hp Pavilion 14-AL114TU', 4, 'Cân nặng:	2KG\r\nCPU:	Core i3, 7100U, 2.4GHz, 3M\r\nMàu sắc:	Silver\r\nTình Trạng Máy :	Mới 100%\r\nXuất xứ:	Chính hãng\r\nRAM:	4GB DDR4\r\nỔ cứng:	HDD 500GB (5400rpm)\r\nMàn hình:	14 HD (1366 x 768) Diagonal SVA BrightView WLED Backlit\r\nVGA/GPU:	Intel® UHD Graphics 620', 10990000, 9990000, 'hp-1.jpg', 'cái', 0, '2018-05-04 06:00:27', '2018-06-03 04:00:23'),
+(14, 'ASUS VIVOBOOK S14 S410UA – EB218T', 3, '-CPU: Intel® Core™ i3-7100U Processor (3M Cache 2.4 GHz)\r\n-VGA: Intel® HD Graphics 620\r\n-RAM: 4GB DDR4 2400 MHz SDRAM HDD: 1000G HDD\r\n-DISPLAY:14 inch - 16:9 FHD (1920x1080) LED Backlight\r\n-OS: Windows 10 Home 64 bit', 11990000, 10990000, 'Asuc-4.jpg', 'cái', 0, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(15, 'ASUS UX490UA-XS74-B', 3, '-CPU:7th Generation Intel Core i7 - 7500U Processor\r\n-VGA: Intel® HD Graphics\r\n-RAM: 16GB DDR4 HDD: 512GB Solid State Drive\r\n-DISPLAY: 14\" LED FHD (1920x1080) Anit Glaire\r\n-OS: Windows 10', 36900000, 34900000, 'Asuc-3.jpg', 'cái', 1, '2018-05-04 06:00:27', '2018-06-03 04:00:23'),
+(16, 'ASUS TUF GAMING FX504GD-E4177', 3, '-CPU: Intel® Core i5-8300H (2.3GHz upto 4.0GHz)\r\n-VGA: NVIDIA GeForce GTX 1050 2GB GDDR5 + Intel UHD Graphics 630\r\n-RAM: 8GB DDR4 - 2666MHz\r\n-HDD: 1TB HDD 5400rpm (SSHD 8GB)\r\n-DISPLAY: 15.6\" FHD (1920 x 1080) IPS\r\n-OS: Windows 10', 18900000, 17900000, 'Ausc-2.jpg', 'cái', 0, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(17, 'ASUS FX53VD-MS72', 3, '-CPU: 7th Generation Intel® Core™ i7 7700HQ Processors\r\n-VGA: NVIDIA GeForce GTX 1050\r\n-RAM: 8GB DDR4 2400MHz\r\n-HDD: 256G SATA 3 SSD\r\n-DISPLAY: 15.6\" FHD (1920x1080) Anti-Glare LED-backlit\r\n-OS: Win10', 20190000, 21500000, 'Asus-fx53vd.jpg', 'cai', 0, '2018-05-04 06:00:27', '2018-06-03 04:00:23'),
+(18, 'MPXY2 - Macbook Pro Retina 2017 13inch SSD 512GB', 2, '3.1GHz dual-core Intel Core i5 processor, Turbo Boost up to 3.5GHz\r\n8GB 2133MHz LPDDR3 memory\r\n512GB SSD storage\r\nIntel Iris Plus Graphics 650\r\nFour Thunderbolt 3 ports\r\nBacklit Keyboard - US English', 42900000, 0, 'Apple-Macbook-Pro-retina-2017.jpg', 'cái', 0, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(19, 'Macbook Pro Retina MJLQ2 (15.4 inch, Mid 2018) ', 2, '- CPU: 2.2 GHz Quad-Core Intel Core i7 (Turbo Boost 3.4 GHz) Crystalwell\r\n- Graphics: Integrated Intel Iris Graphics\r\n- RAM: 16 GB 1600MHz DDR3L\r\n- Ổ cứng SSD: 256 GB\r\n- Màn hình Retina 15.4 inch. Độ phân giải : 2880 x 1800\r\n- Cổng Mạng : 802.11ac Wi-Fi, Bluetooth 4.0\r\n- Khe Cắm : Thunderbolt 2, USB 3.0, HDMI\r\n- Thiết bị nghe nhìn : FaceTime HD Camera, Dual Mics\r\n- Force Touch Trackpad\r\n- Hệ điều hành : Mac OS X Yosimite', 37500000, 0, 'Apple-Macbook-Pro-retina.jpg', 'cái', 1, '2018-05-15 02:16:15', '2018-06-03 04:00:23'),
+(20, 'MPXW2 - Macbook Pro Retina 2017 13inch', 2, '3.1GHz dual-core Intel Core i5 processor, Turbo Boost up to 3.5GHz\r\n8GB 2133MHz LPDDR3 memory\r\n512GB SSD storage\r\nIntel Iris Plus Graphics 650\r\nFour Thunderbolt 3 ports\r\nBacklit Keyboard - US English', 41500000, 0, 'Apple-Macbook-Pro-17.jpg', 'cái', 0, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(21, 'Macbook Pro 13\'\' 2017 MPXW2 -I5', 2, '3.1GHz dual-core Intel Core i5 processor, Turbo Boost up to 3.8Gh\r\n16GB 2133MHz LPDDR3 memory\r\n1TB SSD storage\r\nIntel Iris Plus Graphics 650\r\nFour Thunderbolt 3 ports\r\nBacklit Keyboard - US English', 41500000, 39500000, 'Apple-Macbook-Pro-13.jpg', 'cái', 0, '2018-05-04 06:00:27', '2018-06-04 07:25:27'),
+(22, 'ALIENWARE 17 R4', 1, '-CPU:\r\nIntel® Core™ i7-7700HQ Processor 6M Cache up to 3.80 GHz\r\n-VGA:\r\nGeForce GTX 1060 6GB GDDR5\r\n-RAM:\r\n16GB DDR4-2400Mhz\r\n-HDD:\r\n1000G HDD\r\n-DISPLAY:\r\n17.3\"\" FHD IPS Tobii IR Eye\r\n-OS:\r\nWindows 10 Home\r\n-TÌNH TRẠNG:\r\nDell Outlet New', 37990000, 35990000, 'Dell-Alienware-17-r4.jpg', 'cái', 1, '2018-05-04 06:00:27', '2018-06-03 04:00:23'),
+(23, 'Dell XPS 13 9360 2017 i5', 1, '-Dell XPS 13 2017 9360 i7 Kabe lake thế hệ 7 Dòng Ultrabook cao cấp của Dell mạnh nhất hiện nay\r\n-Máy Xách Tay từ Mỹ về đời mới nhất như mới Like New 99%', 24390000, 0, 'Dell XPS 13.jpg', 'cái', 0, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(24, 'LAPTOP DELL VOSTRO 5568 ', 1, '-Nắp lưng kim loại sang trọng\r\n-Màn hình 15.6 inch HD sắc nét\r\n-Vi xử lý Intel core i5 7200U\r\n-RAM 4GB, Ổ cứng HDD 1TB', 16990000, 0, 'dell-vostro-5568.jpg', 'cái', 0, '2018-05-04 06:00:27', '2018-06-03 04:00:23'),
+(25, 'Dell XPS 15 9560 2107', 1, 'Dell XPS 15 9560 2017 i7 7700HQ 2.8Ghz, Ram 16GB, SSD 512GB, Vga GTX1050 4GB, 15.6\" IPS UHD 4K IGZO 3840x2160 Touch Screen New Full Box', 47790000, 44290000, 'Dell XPS 15 9560 2017.jpg', 'cái', 0, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(26, 'Dell Precision M6700', 1, ' CPU 	 Intel Core i7 3720QM ( 8 x 2.6Ghz, Turbo Boost 3.6Ghz, 6MB Cache)\r\n RAM	 8GB PC3 1600MHz, up to 32GB\r\n Hard Disk	 HDD 500GB 7200rpm\r\n VGA	 NVIDIA Quadro K3000M ( 2GB 256 bit upto 10GB vs Ram ) + Intel HD Graphics 4000\r\n LCD 	 17.3-inch Anti-Glare FHD Ultrasharp (1920x1080)\r\n OS	 Windows 7 Professional 64bit\r\n Wifi	 Wireless-N Wi-Fi (802.11b/g/n) for connectivity\r\n Lan	 Ethernet (10/100/1000)\r\n Battery	 Up to 2 hours of battery life (9-cell)\r\n Options	 DVD-RW, Webcam, Card Reader, Out VGA, HDMI, 4 x USB,....\r\n Tình trạng	 Máy đẹp 98%, hàng nhập USA\r\n Bảo hành	12 Tháng', 15500000, 0, 'dell-m670f0-6.jpg', 'cái', 0, '2018-05-15 02:16:15', '2018-06-04 07:25:27'),
+(27, 'LENOVO IDEAPAD 320 - 15IKB', 7, 'Màn hình: 15.6 inch Full HD\r\nVi xử lý: Intel Core i5 thế hệ 8\r\nRAM: 4 GB\r\nỔ cứng: HDD 1TB\r\nHệ điều hành Free DOS\r\nĐồ họa tích hợp', 11990000, 10990000, 'lenovo-5.jpg', 'cái', 0, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(28, 'Toshiba Satellite C40-A117', 6, 'Bộ vi xử lý : Intel Core i3-3120M 2.5GHz\r\nBộ nhớ trong : RAM 4G \r\nỔ đĩa cứng : HDD 500G(SATA5400)\r\nKích cỡ màn hình : 14 inch\r\nỔ đĩa quang : DVD-RW', 9390000, 0, 'toshiba-3.jpg', 'cái', 1, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(29, 'Toshiba Satellite C50', 6, 'Hãng Sản Xuất : Toshiba\r\nBộ vi xử lý : N2830 2*2.16Ghz-1Mb\r\nMàn hình : 15.6Inch\r\nBộ nhớ trong : 2 GB \r\nỔ đĩa cứng : 500GB', 6999000, 0, 'toshiba-4.jpg', 'cái', 0, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(30, 'LAPTOP LENOVO THINKPAD E470', 7, 'Màu sắc:	Đen\r\nNhà sản xuất:	Lenovo\r\nXuất xứ:	Trung Quốc\r\nThời gian bảo hành:	12 tháng\r\nĐịa điểm bảo hành:	Nguyễn Kim\r\nCPU:	Intel Core i5\r\nLoại CPU:	7200U\r\nTốc độ CPU:	2.50 GHz\r\nBộ nhớ đệm:	3 MB Cache', 15190000, 14190000, 'lenovo-1.jpg', 'cái', 1, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(31, 'LENOVO IDEAPAD 710S PLUS 13.3\'\'', 7, 'Màn hình: IPS FullHD 13.3 inch\r\nVi xử lý: Intel core i5 7200U\r\nRAM: 8 GB\r\nỔ cứng: SSD 256 GB\r\nĐồ họa: Intel HD Graphics 620\r\nHệ điều hành: Windows 10 Home SL', 20490000, 19490000, 'lenovo-2.jpg', 'cái', 0, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(32, 'LENOVO YOGA 520-14IKB', 7, 'CPU: Intel Core i5\r\nRAM/HDD: 4GB/1TB\r\nMàn hình: FHD 14 inch\r\nCard MH: Intel HD Graphics\r\nHĐH: Windows 10 Home EM', 15900000, 14900000, 'lenovo-3.jpg', 'cái', 0, '2018-05-04 06:00:27', '2018-06-04 01:38:35'),
+(33, 'LENOVO IDEAPAD Y520-15IKBN', 7, 'Màn hình IPS 15.6\'\' FullHD\r\nRAM 8GB/HDD 1TB/SSD 128GB\r\nVi xử lý Intel Core i5\r\nĐồ họa NVIDIA® GeForce® GTX 1050 4GB', 20990000, 19990000, 'lenovo-4.jpg', 'cái', 1, '2018-05-04 06:00:27', '2018-06-04 01:38:35');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `slide`
+-- Cấu trúc bảng cho bảng `slide`
 --
 
 CREATE TABLE `slide` (
@@ -233,19 +184,19 @@ CREATE TABLE `slide` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `slide`
+-- Đang đổ dữ liệu cho bảng `slide`
 --
 
 INSERT INTO `slide` (`id`, `link`, `image`) VALUES
-(1, '', 'banner1.jpg'),
-(2, '', 'banner2.jpg'),
-(3, '', 'banner3.jpg'),
-(4, '', 'banner4.jpg');
+(1, '', 'laptop-h-slide-1920x750.jpg'),
+(2, '', 'slide_index_3.jpg'),
+(3, '', 'P.jpg'),
+(4, '', '1487908354_banner1.png');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `type_products`
+-- Cấu trúc bảng cho bảng `type_products`
 --
 
 CREATE TABLE `type_products` (
@@ -258,22 +209,22 @@ CREATE TABLE `type_products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `type_products`
+-- Đang đổ dữ liệu cho bảng `type_products`
 --
 
 INSERT INTO `type_products` (`id`, `name`, `description`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Bánh mặn', 'Nếu từng bị mê hoặc bởi các loại tarlet ngọt thì chắn chắn bạn không thể bỏ qua những loại tarlet mặn. Ngoài hình dáng bắt mắt, lớp vở bánh giòn giòn cùng với nhân mặn như thịt gà, nấm, thị heo ,… của bánh sẽ chinh phục bất cứ ai dùng thử.', 'banh-man-thu-vi-nhat-1.jpg', NULL, NULL),
-(2, 'Bánh ngọt', 'Bánh ngọt là một loại thức ăn thường dưới hình thức món bánh dạng bánh mì từ bột nhào, được nướng lên dùng để tráng miệng. Bánh ngọt có nhiều loại, có thể phân loại dựa theo nguyên liệu và kỹ thuật chế biến như bánh ngọt làm từ lúa mì, bơ, bánh ngọt dạng bọt biển. Bánh ngọt có thể phục vụ những mục đính đặc biệt như bánh cưới, bánh sinh nhật, bánh Giáng sinh, bánh Halloween..', '20131108144733.jpg', '2016-10-12 02:16:15', '2016-10-13 01:38:35'),
-(3, 'Bánh trái cây', 'Bánh trái cây, hay còn gọi là bánh hoa quả, là một món ăn chơi, không riêng gì của Huế nhưng khi "lạc" vào mảnh đất Cố đô, món bánh này dường như cũng mang chút tinh tế, cầu kỳ và đặc biệt. Lấy cảm hứng từ những loại trái cây trong vườn, qua bàn tay khéo léo của người phụ nữ Huế, món bánh trái cây ra đời - ngọt thơm, dịu nhẹ làm đẹp lòng biết bao người thưởng thức.', 'banhtraicay.jpg', '2016-10-18 00:33:33', '2016-10-15 07:25:27'),
-(4, 'Bánh kem', 'Với người Việt Nam thì bánh ngọt nói chung đều hay được quy về bánh bông lan – một loại tráng miệng bông xốp, ăn không hoặc được phủ kem lên thành bánh kem. Tuy nhiên, cốt bánh kem thực ra có rất nhiều loại với hương vị, kết cấu và phương thức làm khác nhau chứ không chỉ đơn giản là “bánh bông lan” chung chung đâu nhé!', 'banhkem.jpg', '2016-10-26 03:29:19', '2016-10-26 02:22:22'),
-(5, 'Bánh crepe', 'Crepe là một món bánh nổi tiếng của Pháp, nhưng từ khi du nhập vào Việt Nam món bánh đẹp mắt, ngon miệng này đã làm cho biết bao bạn trẻ phải “xiêu lòng”', 'crepe.jpg', '2016-10-28 04:00:00', '2016-10-27 04:00:23'),
-(6, 'Bánh Pizza', 'Pizza đã không chỉ còn là một món ăn được ưa chuộng khắp thế giới mà còn được những nhà cầm quyền EU chứng nhận là một phần di sản văn hóa ẩm thực châu Âu. Và để được chứng nhận là một nhà sản xuất pizza không hề đơn giản. Người ta phải qua đủ mọi các bước xét duyệt của chính phủ Ý và liên minh châu Âu nữa… tất cả là để đảm bảo danh tiếng cho món ăn này.', 'pizza.jpg', '2016-10-25 17:19:00', NULL),
-(7, 'Bánh su kem', 'Bánh su kem là món bánh ngọt ở dạng kem được làm từ các nguyên liệu như bột mì, trứng, sữa, bơ.... đánh đều tạo thành một hỗn hợp và sau đó bằng thao tác ép và phun qua một cái túi để định hình thành những bánh nhỏ và cuối cùng được nướng chín. Bánh su kem có thể thêm thành phần Sô cô la để tăng vị hấp dẫn. Bánh có xuất xứ từ nước Pháp.', 'sukemdau.jpg', '2016-10-25 17:19:00', NULL);
+(1, 'Laptop Dell', 'Dell Inc là một công ty đa quốc gia của Hoa Kỳ về phát triển và thương mại hóa công nghệ máy tính có trụ sở tại Round Rock, Texas, Hoa Kỳ. Dell được thành lập năm 1984 do chủ quản gia Michael Dell đồng sáng lập. Đây là công ty có thu nhập lớn thứ 28 tại Hoa Kỳ.', '', NULL, NULL),
+(2, 'Laptop Apple', 'Chắc hẳn đã có lần bạn bị vẻ đẹp từ những chiếc máy tính Mac quyến rũ ngay từ cái nhìn đầu tiên và bạn sẽ bắt đầu tìm hiểu về thiết kế, khả năng làm việc và giá bán của những chiếc máy tính xách tay này.', '', '2018-05-15 02:16:15', '2018-06-04 01:38:35'),
+(3, 'Laptop Asus', 'Được thành lập năm 1989, ASUS là công ty điện tử tiêu dùng và phần cứng máy tính đa quốc gia có trụ sở tại Đài Loan. Luôn cam kết tạo nên những sản phẩm thông minh cho cuộc sống hiện tại và tương lai, ASUS là thương hiệu gaming và bo mạch chủ Số 1 thế giới, đồng thời thuộc top 3 nhà cung cấp máy tính xách tay tiêu dùng hàng đầu.', '', '2018-05-04 06:00:27', '2018-06-04 07:25:27'),
+(4, 'Laptop HP', 'Thương hiệu HP có nguồn gốc từ Mỹ, cùng với Dell và Acer, HP đã trở thành một trong ba nhà sản xuất PC lớn nhất. Ngoài ra HP còn là một trong những nhà sản xuất luôn đưa ra những cái đầu tiên trong làng laptop và có rất nhiều dòng laptop đa dạng khác nhau.', '', '2018-05-04 03:12:30', '2018-06-04 02:22:22'),
+(5, 'Laptop Acer', 'Acer là một tập đoàn có trụ sở tại Đài Loan, chuyên sản xuất và kinh doanh các thiết bị, phần cứng máy tính, được thành lập từ năm 1976. Tại Việt Nam, Acer được biết đến nhiều nhất với sản phẩm máy tính sách tay. Thế nhưng, ngoài Laptop, Acer còn sản xuất máy tính để bàn, máy tính bảng, server, các thiết bị lưu trữ, màn hình hiển thị, smartphone và các thiết bị ngoại vi. ', '', '2018-05-28 04:00:00', '2018-06-03 04:00:23'),
+(6, 'Laptop Toshiba', 'Nói đến thiết kế của Toshiba trong năm nay vẫn là một sự dậm chân tại chỗ, chưa có một sản phẩm nào \"độc đáo\" và \"khác lạ\" mang dấu ấn của chính hãng ngoài một điểm sáng trong dòng Toshiba Kirabook và thiết kế Skyline mới đặc trưng trên Toshiba Satellite P55t, Satellite S55t, Satellite E45t với vỏ nhôm và các góc được bo tròn mang theo sự mềm mại.', '', '2018-05-25 17:19:00', '2018-05-31 22:19:20'),
+(7, 'Laptop Lenovo', 'Lenovo là một trong những hãng điện tử sản xuất máy tính và các thiết bị di động lớn đến từ nhà sản xuất Trung Quốc, mang thương hiệu toàn cầu.', '', '2018-05-25 17:19:00', '2018-06-03 04:00:23');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
@@ -289,116 +240,125 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `phone`, `address`, `remember_token`, `created_at`, `updated_at`) VALUES
-(6, 'Hương Hương', 'huonghuong08.php@gmail.com', '$2y$10$rGY4KT6ZSMmLnxIbmTXrsu2xdgRxm8x0UTwCyYCAzrJ320kYheSRq', '23456789', 'Hoàng Diệu 2', NULL, '2017-03-23 07:17:33', '2017-03-23 07:17:33');
+(7, 'Phan Hải Trường', 'admin@gmail.com', '$2y$10$fGXEqkvlbcVTIcTgL/PrJu1GkapwJwsxWBVbqU.lQONB5mS8dIAR6', '01667906866', 'Hà Nội', 'wOMkQnq2aiQ9PJrZaOlWwKbQ0BpJuiAYMPtaqtSD6n72OZvkwCSWF0hOPi4c', '2018-06-05 12:35:17', '2018-06-05 12:35:17'),
+(8, 'Hai Hai', 'admin1@gmail.com', '$2y$10$hirHHDzwVG.T2XKiZuu.ze0VKOzoqL9TbrHRJ7VCMV/paCToAV0mS', '111111', 'Hà Nội', 'FI9hYc2sSGdSIyU7zDofVUykLkIFIay7FVdwtk1kObW3TjfNHLEoIgtjGasf', '2018-06-05 13:18:33', '2018-06-05 13:18:33');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `bills`
+-- Chỉ mục cho bảng `bills`
 --
 ALTER TABLE `bills`
   ADD PRIMARY KEY (`id`),
   ADD KEY `bills_ibfk_1` (`id_customer`);
 
 --
--- Indexes for table `bill_detail`
+-- Chỉ mục cho bảng `bill_detail`
 --
 ALTER TABLE `bill_detail`
   ADD PRIMARY KEY (`id`),
   ADD KEY `bill_detail_ibfk_2` (`id_product`);
 
 --
--- Indexes for table `customer`
+-- Chỉ mục cho bảng `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `news`
+-- Chỉ mục cho bảng `news`
 --
 ALTER TABLE `news`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `products`
+-- Chỉ mục cho bảng `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
   ADD KEY `products_id_type_foreign` (`id_type`);
 
 --
--- Indexes for table `slide`
+-- Chỉ mục cho bảng `slide`
 --
 ALTER TABLE `slide`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `type_products`
+-- Chỉ mục cho bảng `type_products`
 --
 ALTER TABLE `type_products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `bills`
+-- AUTO_INCREMENT cho bảng `bills`
 --
 ALTER TABLE `bills`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
 --
--- AUTO_INCREMENT for table `bill_detail`
+-- AUTO_INCREMENT cho bảng `bill_detail`
 --
 ALTER TABLE `bill_detail`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
 --
--- AUTO_INCREMENT for table `customer`
+-- AUTO_INCREMENT cho bảng `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+
 --
--- AUTO_INCREMENT for table `slide`
+-- AUTO_INCREMENT cho bảng `slide`
 --
 ALTER TABLE `slide`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
--- AUTO_INCREMENT for table `type_products`
+-- AUTO_INCREMENT cho bảng `type_products`
 --
 ALTER TABLE `type_products`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `products`
+-- Các ràng buộc cho bảng `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_id_type_foreign` FOREIGN KEY (`id_type`) REFERENCES `type_products` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

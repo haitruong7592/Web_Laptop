@@ -27,7 +27,7 @@
 											</div>
 										<div class="single-item-body">
 											<p class="single-item-title">{{$new -> name}}</p>
-											<p class="single-item-price" style="font-size:18px">
+											<p class="single-item-price" style="font-size:15px">
 											@if($new -> promotion_price == 0)
 												<span class="flash-sale">{{number_format($new -> unit_price)}} đồng</span>
 											@else

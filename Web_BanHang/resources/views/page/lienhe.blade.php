@@ -3,11 +3,11 @@
 	<div class="inner-header">
 		<div class="container">
 			<div class="pull-left">
-				<h6 class="inner-title">Contacts</h6>
+				<h6 class="inner-title">Liên hệ</h6>
 			</div>
 			<div class="pull-right">
 				<div class="beta-breadcrumb font-large">
-					<a href="{{route('trang-chu')}}">Trang chủ</a> / <span>Contacts</span>
+					<a href="{{route('trang-chu')}}">Trang chủ</a> / <span>Liên hệ</span>
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -23,9 +23,8 @@
 			<div class="space50">&nbsp;</div>
 			<div class="row">
 				<div class="col-sm-8">
-					<h2>Contact Form</h2>
-					<div class="space20">&nbsp;</div>
-					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit ani m id est laborum.</p>
+					<h2>Hãy để lại lời nhắn</h2>
+									
 					<div class="space20">&nbsp;</div>
 					<form action="#" method="post" class="contact-form">	
 						<div class="form-block">
@@ -46,29 +45,22 @@
 					</form>
 				</div>
 				<div class="col-sm-4">
-					<h2>Contact Information</h2>
+					<h2>Thông tin liên hệ</h2>
 					<div class="space20">&nbsp;</div>
 
-					<h6 class="contact-title">Address</h6>
+					<h6 class="contact-title">Địa chỉ</h6>
 					<p>
-						Suite 127 / 267 – 277 Brussel St,<br>
-						62 Croydon, NYC <br>
-						Newyork
+						KTX Khu B, ĐHQG,<br> Tô Vĩnh Diện, Đông Hòa, Dĩ An, Bình Dương<br>
+						
+						Việt Nam
 					</p>
 					<div class="space20">&nbsp;</div>
-					<h6 class="contact-title">Business Enquiries</h6>
+					<h6 class="contact-title">Email</h6>
 					<p>
-						Doloremque laudantium, totam rem aperiam, <br>
-						inventore veritatio beatae. <br>
-						<a href="mailto:biz@betadesign.com">biz@betadesign.com</a>
+						 
+						<a href="haitruong7592@gmail.com">haitruong7592@gmail.com</a>
 					</p>
-					<div class="space20">&nbsp;</div>
-					<h6 class="contact-title">Employment</h6>
-					<p>
-						We’re always looking for talented persons to <br>
-						join our team. <br>
-						<a href="hr@betadesign.com">hr@betadesign.com</a>
-					</p>
+
 				</div>
 			</div>
 		</div> <!-- #content -->

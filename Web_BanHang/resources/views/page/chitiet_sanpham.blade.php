@@ -29,7 +29,7 @@
 						<div class="col-sm-8">
 							<div class="single-item-body">
 								<p class="single-item-title"><h2>{{$sanpham->name}}</h2></p>
-								<p class="single-item-price" style="font-size:18px">
+								<p class="single-item-price" style="font-size:15px">
 									@if($sanpham -> promotion_price == 0)
 												<span class="flash-sale">{{number_format($sanpham -> unit_price)}} đồng</span>
 											@else
@@ -91,7 +91,7 @@
 									</div>
 									<div class="single-item-body">
 										<p class="single-item-title">{{$sptt->name}}</p>
-										<p class="single-item-price" style="font-size:18px">
+										<p class="single-item-price" style="font-size:15px">
 											@if($sptt -> promotion_price == 0)
 												<span class="flash-sale">{{number_format($sptt -> unit_price)}} đồng</span>
 											@else
@@ -114,78 +114,7 @@
 						</div>
 					</div> <!-- .beta-products-list -->
 				</div>
-				<div class="col-sm-3 aside">
-					<div class="widget">
-						<h3 class="widget-title">Best Sellers</h3>
-						<div class="widget-body">
-							<div class="beta-sales beta-lists">
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="public/source/assets/dest/images/products/sales/1.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="public/source/assets/dest/images/products/sales/2.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="public/source/assets/dest/images/products/sales/3.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="public/source/assets/dest/images/products/sales/4.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div> <!-- best sellers widget -->
-					<div class="widget">
-						<h3 class="widget-title">New Products</h3>
-						<div class="widget-body">
-							<div class="beta-sales beta-lists">
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="public/source/assets/dest/images/products/sales/1.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="public/source/assets/dest/images/products/sales/2.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="public/source/assets/dest/images/products/sales/3.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="public/source/assets/dest/images/products/sales/4.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div> <!-- best sellers widget -->
-				</div>
+
 			</div>
 		</div> <!-- #content -->
 	</div> <!-- .container -->

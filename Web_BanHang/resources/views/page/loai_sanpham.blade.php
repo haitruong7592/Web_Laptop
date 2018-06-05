@@ -46,7 +46,7 @@
 										</div>
 										<div class="single-item-body">
 											<p class="single-item-title">{{$sp->name}}</p>
-											<p class="single-item-price" style="font-size:18px">
+											<p class="single-item-price" style="font-size:15px">
 											@if($sp -> promotion_price == 0)
 												<span class="flash-sale">{{number_format($sp -> unit_price)}} đồng</span>
 											@else
@@ -87,7 +87,7 @@
 										</div>
 										<div class="single-item-body">
 											<p class="single-item-title">{{$spk->name}}</p>
-											<p class="single-item-price" style="font-size:18px">
+											<p class="single-item-price" style="font-size:15px">
 											@if($spk -> promotion_price == 0)
 												<span class="flash-sale">{{number_format($spk -> unit_price)}} đồng</span>
 											@else
